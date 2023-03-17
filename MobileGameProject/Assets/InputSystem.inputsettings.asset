@@ -16,6 +16,7 @@ MonoBehaviour:
   - Touchscreen
   - Gyroscope
   - Keyboard
+  - Gamepad
   m_UpdateMode: 2
   m_MaxEventBytesPerUpdate: 5242880
   m_MaxQueuedEventsPerUpdate: 1000

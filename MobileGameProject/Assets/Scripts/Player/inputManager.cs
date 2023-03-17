@@ -8,19 +8,19 @@ using UnityEngine.InputSystem;
 
 public class inputManager : MonoBehaviour
 {
-    public PlayerInput playerInput;
-    public InputAction movement;
+    private PlayerInput playerInput;
+    private InputAction movement;
 
     private InputAction.CallbackContext movementContex;
 
     [Header("Varibles")]
-    private Rigidbody2D rb;
-    private Vector2 v_Move;
-    private float speed = 90;
+    private Rigidbody rb;
+    private Vector2 playerVeloctiy;
+    [SerializeField]private float speed = 90;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();
     }
 
@@ -41,8 +41,12 @@ public class inputManager : MonoBehaviour
     private void onMove(InputAction.CallbackContext context)
     {
         movementContex = context;
-        v_Move = movement.ReadValue<Vector2>();
-        rb.velocity = v_Move * speed * Time.deltaTime;
+
+        playerVeloctiy = Vector2.zero;
+        playerVeloctiy = movement.ReadValue<Vector2>();
+        playerVeloctiy.Normalize();
+
+        rb.AddForce(playerVeloctiy * speed * Time.deltaTime);
     }
 
     private void FixedUpdate()
