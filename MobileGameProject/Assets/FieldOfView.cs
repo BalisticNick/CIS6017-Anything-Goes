@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
@@ -29,32 +30,33 @@ public class FieldOfView : MonoBehaviour
         while (true)
         {
             yield return wait;
-            FieldOfViewCheck();
+            
+            canSeePlayer = FieldOfViewCheck();
         }
     }
 
-    private void FieldOfViewCheck()
+    private bool FieldOfViewCheck()
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
+            Vector3 directionToTarget = (target.position - transform.position);
 
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            if (Vector3.Angle(transform.forward, directionToTarget) < angle /2)
             {
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
-                    canSeePlayer = true;
+                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                    return true;
                 else
-                    canSeePlayer = false;
+                    return false;
             }
             else
-                canSeePlayer = false;
+                return false;
         }
-        else if (canSeePlayer)
-            canSeePlayer = false;
+        else
+            return false;
     }
 }
