@@ -8,16 +8,23 @@ using UnityEngine.InputSystem;
 
 public class inputManager : MonoBehaviour
 {
+    #region "Input & Context"
     private PlayerInput playerInput;
     private InputAction movement;
+    private InputAction action;
 
     private InputAction.CallbackContext movementContex;
+    private InputAction.CallbackContext actionContex;
+    #endregion
 
-    [Header("Varibles")]
+    #region "Varibles"
+    [Header("Movement")]
     private Rigidbody rb;
     private Vector2 playerVeloctiy;
     [SerializeField]private float speed = 90;
 
+
+    #endregion
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
