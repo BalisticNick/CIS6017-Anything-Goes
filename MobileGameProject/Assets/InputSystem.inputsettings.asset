@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: InputSystem.inputsettings
   m_EditorClassIdentifier: 
   m_SupportedDevices:
-  - Touchscreen
-  - Gyroscope
-  - Keyboard
   - Gamepad
-  m_UpdateMode: 2
+  - Keyboard
+  - Mouse
+  - Touchscreen
+  m_UpdateMode: 1
   m_MaxEventBytesPerUpdate: 5242880
   m_MaxQueuedEventsPerUpdate: 1000
   m_CompensateForScreenOrientation: 1
