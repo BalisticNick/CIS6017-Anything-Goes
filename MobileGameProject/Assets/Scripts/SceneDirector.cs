@@ -19,17 +19,15 @@ namespace SceneSystem
             Debug.Log(challenges[r]);
         }
 
-        private void FixedUpdate()
-        {
-            challenges = ChallengeSceneNames;
-        }
+        private void FixedUpdate() =>  challenges = ChallengeSceneNames;
 
-        public void MainMenu()
+
+        public static void MainMenu()
         {
             SceneManager.LoadScene("Main Menu");
         }
 
-        public void StartGame()
+        public static void StartGame()
         {
             SceneManager.LoadScene("MainScene");
         }

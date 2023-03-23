@@ -9,7 +9,6 @@ using SceneSystem;
 
 namespace Input
 {
-
     public class inputManager : MonoBehaviour
     {
         #region "Input & Context"
@@ -57,6 +56,8 @@ namespace Input
         }
         #endregion
 
+        #region objectActions
+
         private void onMove(InputAction.CallbackContext context)
         {
 
@@ -74,6 +75,21 @@ namespace Input
         {
             interactContex = context;
 
+            datapackInteraction();
+        }
+        #endregion
+
+        private void FixedUpdate()
+        {
+            onMove(movementContex);
+        }
+
+        #region UIInteractionCalls
+
+        public void datapackInteraction()
+        {
+            canInteract = DatapackController.canInteract;
+
             if (interact.triggered && canInteract)
             {
                 Debug.Log("hallo");
@@ -81,12 +97,7 @@ namespace Input
             }
         }
 
-        private void FixedUpdate()
-        {
-            onMove(movementContex);
-            canInteract = DatapackController.canInteract;
-
-        }
+        #endregion
 
     }
 }
