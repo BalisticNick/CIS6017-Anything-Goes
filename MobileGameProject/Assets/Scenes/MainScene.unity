@@ -847,7 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7a99abe87dae4782852a89391439c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  challenges:
+  ChallengeSceneNames:
   - Challenge 1
 --- !u!4 &893762535
 Transform:

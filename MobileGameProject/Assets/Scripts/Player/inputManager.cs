@@ -1,9 +1,11 @@
+using datapack;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using SceneSystem;
 
 namespace Input
 {
@@ -28,8 +30,6 @@ namespace Input
         [SerializeField] private float speed = 90;
         private bool canInteract = false;
         #endregion
-
-        private SceneDirector cScene;
 
         private void Awake()
         {
@@ -77,14 +77,14 @@ namespace Input
             if (interact.triggered && canInteract)
             {
                 Debug.Log("hallo");
-                cScene.
+                SceneDirector.LoadRandomScene();
             }
         }
 
         private void FixedUpdate()
         {
             onMove(movementContex);
-            canInteract = ButtonController.canInteract;
+            canInteract = DatapackController.canInteract;
 
         }
 
