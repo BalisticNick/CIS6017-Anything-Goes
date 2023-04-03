@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Input
+namespace MobileInput
 {
     public class MarbleInput : MonoBehaviour
     {
@@ -31,6 +30,8 @@ namespace Input
         #region "OnEnable & OnDisable"
         private void OnEnable()
         {
+            Input.gyro.enabled = true;
+
             gyro = marbleInput.MarbleRace.Rotation;
 
             marbleInput.Enable();
@@ -39,6 +40,8 @@ namespace Input
 
         private void OnDisable()
         {
+            Input.gyro.enabled = false;
+
             marbleInput.Disable();
             gyro.performed -= onGyro;
         }
