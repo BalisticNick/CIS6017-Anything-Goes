@@ -4,16 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Collectibles
+=======
+  - enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemies
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Walls
   - 
   - 
   - 
