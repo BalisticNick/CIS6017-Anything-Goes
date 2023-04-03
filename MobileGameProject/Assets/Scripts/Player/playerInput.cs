@@ -108,19 +108,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""13f6c456-bf59-4512-93c3-221bfaeed50e"",
-                    ""path"": ""<Touchscreen>/Press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -130,78 +119,19 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1eef263c-7193-4308-b961-5d62cdc5351f"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""ee9fe90e-29ed-42b1-936a-780448d29e67"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Challenges"",
-            ""id"": ""88883b8a-5bbd-418c-99b7-863974635d28"",
-            ""actions"": [
-                {
-                    ""name"": ""Move"",
-                    ""type"": ""Button"",
-                    ""id"": ""54f9d45e-86b8-47b3-99b3-cb68191112b2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Interaction"",
-                    ""type"": ""Button"",
-                    ""id"": ""3e5ea236-b5f8-4cca-9cf9-35c94f4da876"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""80037fdc-24f7-4cad-99e7-918b99da1c49"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d9660147-b27c-48bf-b659-fe24b0895e6a"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5c2a1857-c2d4-4d4b-ac49-aee56ada858f"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interaction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -218,31 +148,31 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""MiddleClick"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""95b234f3-ec2c-481c-8017-397f1383bacf"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""RightClick"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""23cb6572-0705-4fb5-b11a-8cb938febcd1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Pointer"",
                     ""type"": ""PassThrough"",
                     ""id"": ""49ae8f2c-3073-4384-9e8f-59512292d42f"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -255,7 +185,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Touchscreen>/Press"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Touch"",
                     ""action"": ""LeftClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -266,7 +196,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""LeftClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -277,7 +207,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/middleButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""MiddleClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -288,7 +218,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""RightClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -299,8 +229,47 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Pointer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""63869103-54ca-4c5c-9ddd-d78f4818004a"",
+                    ""path"": ""<Touchscreen>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Pointer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Marble Race"",
+            ""id"": ""7343ea27-f850-4f33-a5c5-d7efc0139fc7"",
+            ""actions"": [
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""713e612e-79eb-47f4-9428-e35c028ea422"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""09ccdd6b-8bc7-4c29-80ea-52c0b16a0c0d"",
+                    ""path"": ""<Gyroscope>/angularVelocity"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad;Touch"",
+                    ""action"": ""Rotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -374,16 +343,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        // Challenges
-        m_Challenges = asset.FindActionMap("Challenges", throwIfNotFound: true);
-        m_Challenges_Move = m_Challenges.FindAction("Move", throwIfNotFound: true);
-        m_Challenges_Interaction = m_Challenges.FindAction("Interaction", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_LeftClick = m_UI.FindAction("LeftClick", throwIfNotFound: true);
         m_UI_MiddleClick = m_UI.FindAction("MiddleClick", throwIfNotFound: true);
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_Pointer = m_UI.FindAction("Pointer", throwIfNotFound: true);
+        // Marble Race
+        m_MarbleRace = asset.FindActionMap("Marble Race", throwIfNotFound: true);
+        m_MarbleRace_Rotation = m_MarbleRace.FindAction("Rotation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -481,47 +449,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     }
     public PlayerActions @Player => new PlayerActions(this);
 
-    // Challenges
-    private readonly InputActionMap m_Challenges;
-    private IChallengesActions m_ChallengesActionsCallbackInterface;
-    private readonly InputAction m_Challenges_Move;
-    private readonly InputAction m_Challenges_Interaction;
-    public struct ChallengesActions
-    {
-        private @PlayerInput m_Wrapper;
-        public ChallengesActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Challenges_Move;
-        public InputAction @Interaction => m_Wrapper.m_Challenges_Interaction;
-        public InputActionMap Get() { return m_Wrapper.m_Challenges; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(ChallengesActions set) { return set.Get(); }
-        public void SetCallbacks(IChallengesActions instance)
-        {
-            if (m_Wrapper.m_ChallengesActionsCallbackInterface != null)
-            {
-                @Move.started -= m_Wrapper.m_ChallengesActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_ChallengesActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_ChallengesActionsCallbackInterface.OnMove;
-                @Interaction.started -= m_Wrapper.m_ChallengesActionsCallbackInterface.OnInteraction;
-                @Interaction.performed -= m_Wrapper.m_ChallengesActionsCallbackInterface.OnInteraction;
-                @Interaction.canceled -= m_Wrapper.m_ChallengesActionsCallbackInterface.OnInteraction;
-            }
-            m_Wrapper.m_ChallengesActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Move.started += instance.OnMove;
-                @Move.performed += instance.OnMove;
-                @Move.canceled += instance.OnMove;
-                @Interaction.started += instance.OnInteraction;
-                @Interaction.performed += instance.OnInteraction;
-                @Interaction.canceled += instance.OnInteraction;
-            }
-        }
-    }
-    public ChallengesActions @Challenges => new ChallengesActions(this);
-
     // UI
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
@@ -578,6 +505,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Marble Race
+    private readonly InputActionMap m_MarbleRace;
+    private IMarbleRaceActions m_MarbleRaceActionsCallbackInterface;
+    private readonly InputAction m_MarbleRace_Rotation;
+    public struct MarbleRaceActions
+    {
+        private @PlayerInput m_Wrapper;
+        public MarbleRaceActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Rotation => m_Wrapper.m_MarbleRace_Rotation;
+        public InputActionMap Get() { return m_Wrapper.m_MarbleRace; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MarbleRaceActions set) { return set.Get(); }
+        public void SetCallbacks(IMarbleRaceActions instance)
+        {
+            if (m_Wrapper.m_MarbleRaceActionsCallbackInterface != null)
+            {
+                @Rotation.started -= m_Wrapper.m_MarbleRaceActionsCallbackInterface.OnRotation;
+                @Rotation.performed -= m_Wrapper.m_MarbleRaceActionsCallbackInterface.OnRotation;
+                @Rotation.canceled -= m_Wrapper.m_MarbleRaceActionsCallbackInterface.OnRotation;
+            }
+            m_Wrapper.m_MarbleRaceActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Rotation.started += instance.OnRotation;
+                @Rotation.performed += instance.OnRotation;
+                @Rotation.canceled += instance.OnRotation;
+            }
+        }
+    }
+    public MarbleRaceActions @MarbleRace => new MarbleRaceActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -628,16 +588,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
     }
-    public interface IChallengesActions
-    {
-        void OnMove(InputAction.CallbackContext context);
-        void OnInteraction(InputAction.CallbackContext context);
-    }
     public interface IUIActions
     {
         void OnLeftClick(InputAction.CallbackContext context);
         void OnMiddleClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
         void OnPointer(InputAction.CallbackContext context);
+    }
+    public interface IMarbleRaceActions
+    {
+        void OnRotation(InputAction.CallbackContext context);
     }
 }

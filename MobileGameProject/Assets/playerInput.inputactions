@@ -86,19 +86,8 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "13f6c456-bf59-4512-93c3-221bfaeed50e",
-                    "path": "<Touchscreen>/Press",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -108,78 +97,19 @@
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1eef263c-7193-4308-b961-5d62cdc5351f",
-                    "path": "<Keyboard>/space",
+                    "id": "ee9fe90e-29ed-42b1-936a-780448d29e67",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Challenges",
-            "id": "88883b8a-5bbd-418c-99b7-863974635d28",
-            "actions": [
-                {
-                    "name": "Move",
-                    "type": "Button",
-                    "id": "54f9d45e-86b8-47b3-99b3-cb68191112b2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Interaction",
-                    "type": "Button",
-                    "id": "3e5ea236-b5f8-4cca-9cf9-35c94f4da876",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "80037fdc-24f7-4cad-99e7-918b99da1c49",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d9660147-b27c-48bf-b659-fe24b0895e6a",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5c2a1857-c2d4-4d4b-ac49-aee56ada858f",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -196,31 +126,31 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "MiddleClick",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "95b234f3-ec2c-481c-8017-397f1383bacf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "RightClick",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "23cb6572-0705-4fb5-b11a-8cb938febcd1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Pointer",
                     "type": "PassThrough",
                     "id": "49ae8f2c-3073-4384-9e8f-59512292d42f",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -233,7 +163,7 @@
                     "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Touch",
                     "action": "LeftClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -244,7 +174,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "LeftClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -255,7 +185,7 @@
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "MiddleClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -266,7 +196,7 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -277,8 +207,47 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Pointer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63869103-54ca-4c5c-9ddd-d78f4818004a",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "Pointer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Marble Race",
+            "id": "7343ea27-f850-4f33-a5c5-d7efc0139fc7",
+            "actions": [
+                {
+                    "name": "Rotation",
+                    "type": "PassThrough",
+                    "id": "713e612e-79eb-47f4-9428-e35c028ea422",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "09ccdd6b-8bc7-4c29-80ea-52c0b16a0c0d",
+                    "path": "<Gyroscope>/angularVelocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad;Touch",
+                    "action": "Rotation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

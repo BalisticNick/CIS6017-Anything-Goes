@@ -12,21 +12,29 @@ namespace Input
     public class inputManager : MonoBehaviour
     {
         #region "Input & Context"
+        //Call Player Input Class
         private PlayerInput playerInput;
 
-
+        //Input Action
         private InputAction movement;
         private InputAction interact;
 
+        //Context
         private InputAction.CallbackContext movementContex;
         private InputAction.CallbackContext interactContex;
         #endregion
 
-        #region "Varibles"
+        #region "Player Varibles"
         [Header("Movement")]
         private Rigidbody rb;
+
+        //Vector Movement
         private Vector2 playerVeloctiy;
+
+        //Player Speed (Editible in Editor)
         [SerializeField] private float speed = 90;
+
+        //Interaction
         private bool canInteract = false;
         #endregion
 
@@ -56,12 +64,13 @@ namespace Input
         }
         #endregion
 
-        #region objectActions
+        #region "Player Movement"
+        //player movement for Main Level
 
         private void onMove(InputAction.CallbackContext context)
         {
 
-            //-Movement
+            //Movement
             movementContex = context;
 
             playerVeloctiy = Vector2.zero;
@@ -79,12 +88,7 @@ namespace Input
         }
         #endregion
 
-        private void FixedUpdate()
-        {
-            onMove(movementContex);
-        }
-
-        #region UIInteractionCalls
+        #region "UIInteractionCalls"
 
         public void datapackInteraction()
         {
@@ -98,6 +102,11 @@ namespace Input
         }
 
         #endregion
+
+        private void FixedUpdate()
+        {
+            onMove(movementContex);
+        }
 
     }
 }
