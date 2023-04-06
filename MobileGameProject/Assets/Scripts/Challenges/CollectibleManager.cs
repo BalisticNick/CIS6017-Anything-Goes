@@ -3,43 +3,55 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using SceneSystem;
+using Datapack;
 
 namespace Collectibles
 {
-
     public class CollectibleManager : MonoBehaviour
     {
         #region Varibles
         [SerializeField] private TextMeshProUGUI counterText;
-        private int counter = 0;
-        private bool isOpen;
+        public static int counter = 0;
+        public static bool isOpen = false;
+
+        [SerializeField] private GameObject gate;
+
         #endregion
 
         #region Coin Collection
-        void Start() => UpdateCount();
+        void Start()
+        {
+            isOpen = false;
 
-        void OnEnable() => CollectCount.OnCollected += OnCollectibleCollected;
+        }
 
-        void OnDisable() => CollectCount.OnCollected -= OnCollectibleCollected;
+        void OnEnable() => CoinTracker.onCollected += OnCollectibleCollected;
+
+        void OnDisable() => CoinTracker.onCollected -= OnCollectibleCollected;
 
         void OnCollectibleCollected()
         {
-            counter++;
-            UpdateCount();
+            counter++; 
         }
 
         void UpdateCount()
         {
-            counterText.text = $"{counter} / {CollectCount.total}";
+
+            if (counter == CoinTracker.total)
+            {
+                gate.GetComponent<Renderer>().material.color = Color.green;
+                counterText.text = "Gate is Ready";
+            }
+            else
+            {
+                counterText.text = $"{counter} / {CoinTracker.total}";
+            }
         }
         #endregion
 
-        private void OnTriggerStay(Collider other)
+        private void Update()
         {
-            if (counter == CollectCount.total)
-            {
-                SceneDirector.StartGame();
-            }
+            UpdateCount();
         }
     }
 }

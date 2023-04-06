@@ -10,6 +10,8 @@ namespace SceneSystem
     {
         private static List<string> challenges;
         [SerializeField] public List<string> ChallengeSceneNames;
+        private static int index = 0;
+
         public static void LoadRandomScene()
         {
 
@@ -19,17 +21,21 @@ namespace SceneSystem
             Debug.Log(challenges[r]);
         }
 
+        public static void LoadChallenge()
+        { 
+            SceneManager.LoadScene(challenges[index]);
+        }
+
         private void FixedUpdate() =>  challenges = ChallengeSceneNames;
 
 
-        public static void MainMenu()
-        {
-            SceneManager.LoadScene("Main Menu");
-        }
+        public static void MainMenu() => SceneManager.LoadScene("Main Menu");      
+            
+        public static void StartGame() => SceneManager.LoadScene("Warehouse 1");
 
-        public static void StartGame()
-        {
-            SceneManager.LoadScene("MainScene");
-        }
+
+        public static void WinGame() => SceneManager.LoadScene("");
+
+        public static void LoseGame() => SceneManager.LoadScene("");
     }
 }

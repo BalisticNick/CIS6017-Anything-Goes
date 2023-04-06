@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using SceneSystem;
 using Datapack;
+using Collectibles;
+using UnityEngine.SceneManagement;
 
 namespace MobileInput
 {
@@ -29,17 +31,29 @@ namespace MobileInput
         //Vector Movement
         private Vector2 playerVeloctiy;
 
+        private Vector3 resetPoint;
+        private Quaternion rot;
+
         //Player Speed (Editible in Editor)
         [SerializeField] private float speed = 90;
 
         //Interaction
         private bool canInteract = false;
+        private bool canOpen = false;
+
+        string sceneName = string.Empty;
+
         #endregion
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
             playerInput = new PlayerInput();
+
+            rot = Quaternion.Euler(90f, 0, 0);
+
+            Scene currentScene = SceneManager.GetActiveScene();
+            sceneName = currentScene.name;
 
         }
 
@@ -67,20 +81,39 @@ namespace MobileInput
 
         private void onMove(InputAction.CallbackContext context)
         {
+            resetPoint = new Vector3(rb.position.x, 0, rb.position.z);
+            
 
             //Movement
             movementContex = context;
 
             playerVeloctiy = Vector2.zero;
             playerVeloctiy = movement.ReadValue<Vector2>();
-            playerVeloctiy.Normalize();
+            playerVeloctiy.Normalize(); 
 
-            rb.AddForce(playerVeloctiy * speed * Time.deltaTime);
+            rb.AddForce(playerVeloctiy.x * speed * Time.deltaTime, 0, playerVeloctiy.y * speed * Time.deltaTime);
+
+            if(rb.position.y >= 0.12f)
+            {
+                StartCoroutine(PlayerGrabber());
+            }
+            
+        }
+
+        IEnumerator PlayerGrabber()
+        {
+            rb.velocity = Vector3.zero;
+            rb.transform.SetPositionAndRotation(resetPoint, rot);  
+            yield return new WaitUntil(() => rb.position.y <= 0.11f);
+            StopAllCoroutines();
+
         }
 
         private void onInteract(InputAction.CallbackContext context)
         {
             interactContex = context;
+
+
 
             datapackInteraction();
         }
@@ -90,12 +123,32 @@ namespace MobileInput
 
         public void datapackInteraction()
         {
-            canInteract = DatapackController.canInteract;
+
+            if(sceneName == "Warehouse 1")
+            {
+                canInteract = DatapackManager.canInteract;
+                canOpen = CollectibleManager.isOpen;
+            }
+            else
+            {
+                canInteract = false;
+                canOpen = false;
+            }
+
 
             if (interact.triggered && canInteract)
             {
                 Debug.Log("hallo");
-                SceneDirector.LoadRandomScene();
+                SceneManager.LoadScene("Challenge 1");
+
+                canInteract = false;
+            }
+
+            if(interact.triggered && canOpen)
+            {
+                SceneDirector.StartGame();
+
+                canOpen = false;
             }
         }
 
@@ -104,6 +157,8 @@ namespace MobileInput
         private void FixedUpdate()
         {
             onMove(movementContex);
+
+
         }
 
     }

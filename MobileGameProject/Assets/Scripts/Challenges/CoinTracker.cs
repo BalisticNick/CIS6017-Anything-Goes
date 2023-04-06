@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Collectibles
 {
-    public class CollectCount : MonoBehaviour
+    public class CoinTracker : MonoBehaviour
     {
-        public static event Action OnCollected;
+        public static event Action onCollected;
         public static int total = 0;
 
         private void Awake() => total++;
@@ -14,8 +14,9 @@ namespace Collectibles
         {
             if (other.CompareTag("Player"))
             {
-                OnCollected?.Invoke();
-                Destroy(gameObject);
+                onCollected?.Invoke();
+                gameObject.SetActive(false);
+
             }
         }
 

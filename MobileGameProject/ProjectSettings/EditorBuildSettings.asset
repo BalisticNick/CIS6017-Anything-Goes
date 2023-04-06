@@ -4,7 +4,22 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menus/MainMenu.unity
+    guid: 6bd283da50c16aa46ab7f1e29dab3e4a
+  - enabled: 1
+    path: Assets/Scenes/Warehouse 1.unity
+    guid: a57d5d8049c330148b5ae37960059e2c
+  - enabled: 1
+    path: Assets/Scenes/Menus/LoseGame.unity
+    guid: 4c51e11c0f03c0e43bf6de1b0a93b2f6
+  - enabled: 1
+    path: Assets/Scenes/Menus/WinGame.unity
+    guid: f53f7d5582877b348a8eb0a656526972
+  - enabled: 1
+    path: Assets/Scenes/Challenges/Challenge 1.unity
+    guid: d097ec2d010b21542be8238b1ef35646
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 72666e19845d34242895cc7621dea786, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 8315d7893248dd347aa3818f221927ef, type: 2}
