@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3780159140782244154}
   - component: {fileID: 3780159140782244153}
   - component: {fileID: 3780159140782244152}
-  - component: {fileID: 3780159140782244155}
+  - component: {fileID: 2030028093566631226}
   m_Layer: 0
   m_Name: Datapack
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4800982, y: 2.5151596, z: 0.9915371}
   m_Center: {x: 0.016735792, y: 0.00054359436, z: 0.004231468}
---- !u!114 &3780159140782244155
+--- !u!114 &2030028093566631226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3780159140782244134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df689f68447ed943a3cad9d7305908f, type: 3}
+  m_Script: {fileID: 11500000, guid: 585594e4d02021c4c98b04e6e3695092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   overHeadText: {fileID: 0}

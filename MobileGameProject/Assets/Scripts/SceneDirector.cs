@@ -34,8 +34,8 @@ namespace SceneSystem
         public static void StartGame() => SceneManager.LoadScene("Warehouse 1");
 
 
-        public static void WinGame() => SceneManager.LoadScene("");
+        public static void WinGame() => SceneManager.LoadScene("WinGame");
 
-        public static void LoseGame() => SceneManager.LoadScene("");
+        public static void LoseGame() => SceneManager.LoadScene("LoseGame");
     }
 }

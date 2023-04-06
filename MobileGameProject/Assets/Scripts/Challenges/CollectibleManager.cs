@@ -4,11 +4,14 @@ using TMPro;
 using UnityEngine;
 using SceneSystem;
 using Datapack;
+using System;
 
 namespace Collectibles
 {
     public class CollectibleManager : MonoBehaviour
     {
+        public static event Action onComplete;
+
         #region Varibles
         [SerializeField] private TextMeshProUGUI counterText;
         public static int counter = 0;
@@ -41,6 +44,8 @@ namespace Collectibles
             {
                 gate.GetComponent<Renderer>().material.color = Color.green;
                 counterText.text = "Gate is Ready";
+
+                onComplete?.Invoke();
             }
             else
             {

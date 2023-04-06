@@ -1,0 +1,87 @@
+'e550b3e,Shane,Thu, 6 Apr 2023 04:24:56 +0100,Full Working Game,'
+ 88 files changed, 87330 insertions(+), 137127 deletions(-)
+
+'e16566f,Shane,Mon, 3 Apr 2023 19:54:13 +0100,Everything is now together,'
+ 53 files changed, 47623 insertions(+), 127002 deletions(-)
+
+'9079783,Shane,Mon, 3 Apr 2023 15:19:49 +0100,Merge pull request #3 from BalisticNick/Camera-&-Scene,'
+'0136f9d,Shane,Mon, 3 Apr 2023 15:03:21 +0100,Merge branch 'main' into Camera-&-Scene,'
+'53bb147,Shane,Mon, 3 Apr 2023 14:54:06 +0100,Merge pull request #2 from BalisticNick/Challenges,'
+'8d15a21,Shane,Sat, 25 Mar 2023 17:41:48 +0000,Challenges Branch,'
+ 35 files changed, 45529 insertions(+), 1286 deletions(-)
+
+'22d8f28,Nicholas,Thu, 23 Mar 2023 22:57:38 +0000,bringing Will's first level over to main,'
+ 5 files changed, 4065 insertions(+)
+
+'d6e5a14,Nicholas,Thu, 23 Mar 2023 22:57:05 +0000,Merge branch 'Sprites-Will','
+'ed67e03,Will-DV,Thu, 23 Mar 2023 20:04:14 +0000,Level1 added,'
+ 17 files changed, 1060 insertions(+), 61 deletions(-)
+
+'47932b0,Shane,Thu, 23 Mar 2023 15:50:36 +0000,Clean-up & Further Challenges to test,'
+ 17 files changed, 65869 insertions(+), 17 deletions(-)
+
+'ad059ae,Shane,Thu, 23 Mar 2023 12:31:12 +0000,LoadRandomScene Now Works.,'
+ 5 files changed, 51 insertions(+), 38 deletions(-)
+
+'d8061ea,Shane,Thu, 23 Mar 2023 11:35:44 +0000,Clean-up & trying to fix issues with my script,'
+ 15 files changed, 1537 insertions(+), 351 deletions(-)
+
+'a291bc4,Nicholas,Mon, 20 Mar 2023 20:48:23 +0000,AI-detection compleated!,'
+ 11 files changed, 473 insertions(+), 55 deletions(-)
+
+'0d30d7d,Shane,Mon, 20 Mar 2023 19:19:07 +0000,Setting up the scene for basic loop,'
+ 29 files changed, 26127 insertions(+), 6785 deletions(-)
+
+'2a67b59,Shane,Fri, 17 Mar 2023 16:20:27 +0000,Working on Colliders,'
+ 85 files changed, 13573 insertions(+), 2 deletions(-)
+
+'fd51535,Shane,Fri, 17 Mar 2023 15:52:11 +0000,Movement & UI,'
+ 107 files changed, 11859 insertions(+), 1747 deletions(-)
+
+'765a81e,Will-DV,Fri, 17 Mar 2023 15:51:04 +0000,Create Level1.unity,'
+ 1 file changed, 82207 insertions(+)
+
+'f6174b6,Shane,Fri, 17 Mar 2023 12:27:45 +0000,Set-up & ready to be worked on,'
+ 28 files changed, 19484 insertions(+), 17084 deletions(-)
+
+'876f9d0,Shane,Thu, 16 Mar 2023 10:18:16 +0000,Merge pull request #1 from BalisticNick/Movement,'
+'3977d4f,Shane,Thu, 16 Mar 2023 10:17:20 +0000,Merge branch 'Camera-&-Scene' into Movement,'
+'6f618bb,BalisticNick,Fri, 10 Mar 2023 16:43:10 +0000,added enemy sight,'
+ 11 files changed, 850 insertions(+), 211 deletions(-)
+
+'7bcf032,Shane,Mon, 6 Mar 2023 02:01:44 +0000,quick backup, Scene Edited,'
+ 1 file changed, 113 insertions(+), 16 deletions(-)
+
+'11c0daa,Shane,Fri, 3 Mar 2023 11:20:34 +0000,Just a quick Upload to do work on pc,'
+ 15 files changed, 16114 insertions(+), 9 deletions(-)
+
+'d1b2222,Will-DV,Fri, 24 Feb 2023 18:51:09 +0000,Player and Guard sprite added.,'
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+'eddc68c,Shane,Fri, 24 Feb 2023 18:41:38 +0000,Movement Implemented,'
+ 20 files changed, 3024 insertions(+), 50 deletions(-)
+
+'0d4e662,Shane,Fri, 24 Feb 2023 13:49:23 +0000,Hello World,'
+ 3 files changed, 37 insertions(+)
+
+'2916a2b,Nicholas,Tue, 7 Feb 2023 00:06:58 +0000,Made the project again (this time with the right editor version),'
+ 20 files changed, 33 insertions(+), 983 deletions(-)
+
+'a3a8b82,Nicholas,Mon, 6 Feb 2023 23:36:29 +0000,removing testing assets,'
+ 2 files changed, 7 insertions(+), 170 deletions(-)
+
+'8b85200,Nicholas,Mon, 6 Feb 2023 23:34:57 +0000,Create SampleScene.unity.orig,'
+ 1 file changed, 323 insertions(+)
+
+'bc15199,Nicholas,Mon, 6 Feb 2023 23:34:40 +0000,Merge branch 'Testing-Merge','
+'60b785d,Nicholas,Mon, 6 Feb 2023 23:03:28 +0000,Update SampleScene.unity,'
+ 1 file changed, 87 insertions(+)
+
+'d2a904d,Nicholas,Mon, 6 Feb 2023 23:02:01 +0000,add left square,'
+ 1 file changed, 87 insertions(+)
+
+'995816d,Nicholas,Mon, 6 Feb 2023 22:57:39 +0000,Initial Project commit,'
+ 61 files changed, 4776 insertions(+), 7 deletions(-)
+
+'c571347,Nicholas,Mon, 6 Feb 2023 21:08:48 +0000,Initial commit,'
+ 2 files changed, 74 insertions(+)

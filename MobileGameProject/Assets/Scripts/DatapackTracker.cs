@@ -1,5 +1,4 @@
 using Collectibles;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,42 +6,40 @@ using UnityEngine;
 
 namespace Datapack
 {
-
     public class DatapackTracker : MonoBehaviour
     {
-        public static event Action onCompleted;
+        [SerializeField] private GameObject overHeadText;
 
-        [SerializeField] private TextMeshProUGUI counterText;  
+        public static int total;
+        public static bool canInteract = false;
 
-        public static int datapack = 0;
+        void Start() => total++;
 
-        #region datapack Collection
-        void Start() => UpdateCount();
-
-        public bool onCompelete()
+        private void OnTriggerEnter(Collider other)
         {
-            if (DatapackManager.HasCompleted == true)
+            if (other.CompareTag("Player"))
             {
-                onCompleted?.Invoke();
-                datapack--;
+                overHeadText.SetActive(true);
+                canInteract = true;
+
+                Debug.Log(canInteract);
             }
-            return true;
+            else
+            {
+                canInteract = false;
+            }
         }
 
-        void onDatapackComplete()
+            private void OnTriggerExit(Collider other)
         {
-            datapack++;
-            UpdateCount();
-
+            if (other.CompareTag("Player"))
+            {
+                overHeadText.SetActive(false);
+                canInteract = false;
+                Debug.Log(canInteract);
+            }
         }
 
-        void UpdateCount()
-        {
-            counterText.text = $"{datapack} / {datapack}";
-        }
-        #endregion
-
-
-
+        
     }
 }

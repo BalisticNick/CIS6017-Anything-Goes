@@ -126,7 +126,10 @@ namespace MobileInput
 
             if(sceneName == "Warehouse 1")
             {
-                canInteract = DatapackManager.canInteract;
+                canInteract = Datapack.DatapackTracker.canInteract;
+            }
+            else if (sceneName == "Challenge 1")
+            {
                 canOpen = CollectibleManager.isOpen;
             }
             else
@@ -146,7 +149,7 @@ namespace MobileInput
 
             if(interact.triggered && canOpen)
             {
-                SceneDirector.StartGame();
+                SceneDirector.WinGame();
 
                 canOpen = false;
             }
