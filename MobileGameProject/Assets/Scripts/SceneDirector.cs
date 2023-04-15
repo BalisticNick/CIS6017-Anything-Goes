@@ -29,7 +29,7 @@ namespace SceneSystem
         private void FixedUpdate() =>  challenges = ChallengeSceneNames;
 
 
-        public static void MainMenu() => SceneManager.LoadScene("Main Menu");      
+        public static void MainMenu() => SceneManager.LoadScene("MainMenu");      
             
         public static void StartGame() => SceneManager.LoadScene("Warehouse 1");
 
