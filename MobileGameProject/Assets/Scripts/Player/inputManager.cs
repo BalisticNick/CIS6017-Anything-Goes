@@ -43,6 +43,7 @@ namespace MobileInput
 
         string sceneName = string.Empty;
 
+
         #endregion
 
         private void Awake()
@@ -82,28 +83,28 @@ namespace MobileInput
         private void onMove(InputAction.CallbackContext context)
         {
             resetPoint = new Vector3(rb.position.x, 0, rb.position.z);
-            
+
 
             //Movement
             movementContex = context;
 
             playerVeloctiy = Vector2.zero;
             playerVeloctiy = movement.ReadValue<Vector2>();
-            playerVeloctiy.Normalize(); 
+            playerVeloctiy.Normalize();
 
             rb.AddForce(playerVeloctiy.x * speed * Time.deltaTime, 0, playerVeloctiy.y * speed * Time.deltaTime);
 
-            if(rb.position.y >= 0.12f)
+            if (rb.position.y >= 0.12f)
             {
                 StartCoroutine(PlayerGrabber());
             }
-            
+
         }
 
         IEnumerator PlayerGrabber()
         {
             rb.velocity = Vector3.zero;
-            rb.transform.SetPositionAndRotation(resetPoint, rot);  
+            rb.transform.SetPositionAndRotation(resetPoint, rot);
             yield return new WaitUntil(() => rb.position.y <= 0.11f);
             StopAllCoroutines();
 
@@ -124,7 +125,7 @@ namespace MobileInput
         public void datapackInteraction()
         {
 
-            if(sceneName == "Warehouse 1")
+            if (sceneName == "Warehouse 1")
             {
                 canInteract = Datapack.DatapackTracker.canInteract;
             }
@@ -147,10 +148,25 @@ namespace MobileInput
                 canInteract = false;
             }
 
-            if(interact.triggered && canOpen)
+            if (interact.triggered && canOpen)
             {
-                SceneDirector.WinGame();
+                UI_Timer TimerUI = GameObject.Find("TimerUI").GetComponent<UI_Timer>();
+                bool hiscore = false;
+                float timeRemaining = TimerUI.timer;
+                float timeTaken = 120f - timeRemaining;
 
+                string minutes = Mathf.Floor(timeTaken / 60).ToString("0");
+                string seconds = Mathf.Floor(timeTaken % 60).ToString("00");
+
+                if (PlayerPrefs.GetFloat("hiscoreTime", Mathf.Infinity) > timeTaken)
+                {
+                    PlayerPrefs.SetFloat("hiscoreTime", timeTaken);
+                    hiscore = true;
+                }
+                if (hiscore)
+                    SceneDirector.WinGame($"Congratulations you set a new hiscore of {minutes}:{seconds}!");
+                else
+                    SceneDirector.WinGame($"You took {minutes}:{seconds} to complete the challenge!");
                 canOpen = false;
             }
         }
