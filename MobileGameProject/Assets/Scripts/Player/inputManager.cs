@@ -150,7 +150,7 @@ namespace MobileInput
 
             if (interact.triggered && canOpen)
             {
-                UI_Timer TimerUI = GameObject.Find("TimerUI").GetComponent<UI_Timer>();
+                UI_Timer TimerUI = FindAnyObjectByType<UI_Timer>();
                 bool hiscore = false;
                 float timeRemaining = TimerUI.timer;
                 float timeTaken = 120f - timeRemaining;
