@@ -48,6 +48,7 @@ namespace MobileInput
 
         private void Awake()
         {
+            Time.timeScale = 1;
             rb = GetComponent<Rigidbody>();
             playerInput = new PlayerInput();
 
@@ -152,8 +153,8 @@ namespace MobileInput
             {
                 UI_Timer TimerUI = FindAnyObjectByType<UI_Timer>();
                 bool hiscore = false;
-                float timeRemaining = TimerUI.timer;
-                float timeTaken = 120f - timeRemaining;
+                float timeRemaining = TimerUI.timeRemaining;
+                float timeTaken = TimerUI.currentTime;
 
                 string minutes = Mathf.Floor(timeTaken / 60).ToString("0");
                 string seconds = Mathf.Floor(timeTaken % 60).ToString("00");
@@ -166,7 +167,12 @@ namespace MobileInput
                 if (hiscore)
                     SceneDirector.WinGame($"Congratulations you set a new hiscore of {minutes}:{seconds}!");
                 else
-                    SceneDirector.WinGame($"You took {minutes}:{seconds} to complete the challenge!");
+                {
+                    float hiscoreTime = PlayerPrefs.GetFloat("hiscoreTime");
+                    string hiscoreMinutes = Mathf.Floor(hiscoreTime / 60).ToString("0");
+                    string hiscoreSeconds = Mathf.Floor(hiscoreTime % 60).ToString("00");
+                    SceneDirector.WinGame($"You took {minutes}:{seconds} to complete the challenge!<br>Current Hiscore: {hiscoreMinutes}:{hiscoreSeconds}");
+                }
                 canOpen = false;
             }
         }

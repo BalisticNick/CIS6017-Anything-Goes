@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 144982136}
   - component: {fileID: 144982135}
   - component: {fileID: 144982134}
+  - component: {fileID: 144982137}
   m_Layer: 5
   m_Name: Accept
   m_TagString: Untagged
@@ -526,6 +527,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144982132}
   m_CullTransparentMesh: 1
+--- !u!114 &144982137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144982132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d0aebea583aef4e879ed7e76bd7394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showAdButton: {fileID: 144982134}
 --- !u!1 &199660578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1182,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 713667520}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1479653410}
+        m_TargetAssemblyTypeName: UI_Timer, Assembly-CSharp
+        m_MethodName: set_usedExtraLife
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1445237735}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &713667520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,7 +1386,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Oh dear, time has run out! Would you like to watch an ad to gain an extra
-    2 minutes?
+    minute?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2395,13 +2433,14 @@ GameObject:
   - component: {fileID: 1445237736}
   - component: {fileID: 1445237738}
   - component: {fileID: 1445237737}
+  - component: {fileID: 1445237739}
   m_Layer: 5
   m_Name: ContinueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1445237736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2417,6 +2456,7 @@ RectTransform:
   - {fileID: 836229692}
   - {fileID: 144982133}
   - {fileID: 713667518}
+  - {fileID: 1700854034}
   m_Father: {fileID: 1496689046}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2463,6 +2503,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445237735}
   m_CullTransparentMesh: 1
+--- !u!114 &1445237739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445237735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518ac1a0b70daaa4381837a92b1158e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1477851515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2594,9 +2646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50eeeb4ce464511428bbd057e6f5e113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
-  tickTimer: 0
+  totalTimeAllowed: 0
+  currentTime: 0
+  timeRemaining: 0
   TimerText: {fileID: 199660580}
+  ContinueBox: {fileID: 1445237735}
 --- !u!1 &1496689045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,6 +3084,52 @@ Transform:
   m_Father: {fileID: 1209540363}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1700854032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700854034}
+  - component: {fileID: 1700854033}
+  m_Layer: 0
+  m_Name: AdsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1700854033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700854032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49afd7baba857f646a10012bf25c1606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _testMode: 0
+  rewardedAdsButton: {fileID: 144982137}
+--- !u!4 &1700854034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700854032}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -66, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1445237736}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1786128844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3134,7 +3234,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23102
+  m_Name: pb_Mesh38974
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
