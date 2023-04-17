@@ -48,7 +48,8 @@ namespace MobileInput
 
         private void Awake()
         {
-            Time.timeScale = 1;
+            //Resume game whenever player is awaken in another scene incase something goes wrong and the game is still paused from continue box trigger.
+            GameManager.ResumeGame();
             rb = GetComponent<Rigidbody>();
             playerInput = new PlayerInput();
 
@@ -151,21 +152,27 @@ namespace MobileInput
 
             if (interact.triggered && canOpen)
             {
-                UI_Timer TimerUI = FindAnyObjectByType<UI_Timer>();
+                //Setup variables, grab references from TimerUI script
+                UI_Timer TimerUI = GameManager.GetTimerUI_Static();
                 bool hiscore = false;
                 float timeRemaining = TimerUI.timeRemaining;
                 float timeTaken = TimerUI.currentTime;
 
+                //Format minutes:seconds 0:00 from timeTaken
                 string minutes = Mathf.Floor(timeTaken / 60).ToString("0");
                 string seconds = Mathf.Floor(timeTaken % 60).ToString("00");
 
+                //Check hiscoreTime in playerPrefs to see if a new hiScore has been achieved, if so set hiscore to true and store the new hiscore.
                 if (PlayerPrefs.GetFloat("hiscoreTime", Mathf.Infinity) > timeTaken)
                 {
                     PlayerPrefs.SetFloat("hiscoreTime", timeTaken);
                     hiscore = true;
                 }
+
+                //If a hiscore has been achieved show a congratulations message on WinGame scene.
                 if (hiscore)
                     SceneDirector.WinGame($"Congratulations you set a new hiscore of {minutes}:{seconds}!");
+                //Else grab the hiscoreTime, format minutes:seconds 0:00 from hiscoreTime, show a message with current time to complete challenge and current hiscore time on WinGame scene.
                 else
                 {
                     float hiscoreTime = PlayerPrefs.GetFloat("hiscoreTime");
@@ -173,6 +180,8 @@ namespace MobileInput
                     string hiscoreSeconds = Mathf.Floor(hiscoreTime % 60).ToString("00");
                     SceneDirector.WinGame($"You took {minutes}:{seconds} to complete the challenge!<br>Current Hiscore: {hiscoreMinutes}:{hiscoreSeconds}");
                 }
+
+
                 canOpen = false;
             }
         }

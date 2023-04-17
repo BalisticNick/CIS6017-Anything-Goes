@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ResetPlayerPrefs : MonoBehaviour
 {
+    //Clear PlayerPrefs when triggered (OnClick)
     public void OnClick()
     {
         PlayerPrefs.DeleteAll();
